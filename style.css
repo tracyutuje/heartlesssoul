@@ -1,0 +1,951 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #050505;
+    color: #f5eeee;
+    font-family: Georgia, serif;
+}
+
+/* NAVIGATION */
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px 8%;
+    border-bottom: 1px solid #48000d;
+    background: #080808;
+}
+
+.logo {
+    color: #c90025;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #ddd;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #ff173d;
+}
+
+/* HERO SECTION */
+
+.hero {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 50px 20px;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            #33000b 0%,
+            #120005 40%,
+            #050505 75%
+        );
+    position: relative;
+    overflow: hidden;
+}
+
+.subtitle {
+    color: #d00028;
+    letter-spacing: 5px;
+    font-size: 12px;
+    margin-bottom: 30px;
+}
+
+.hero h1 {
+    font-size: clamp(35px, 6vw, 75px);
+    line-height: 1.3;
+    font-style: italic;
+}
+
+.hero h1 span,
+.explore h2 span {
+    color: #d00028;
+}
+
+.description {
+    color: #aaa;
+    max-width: 500px;
+    line-height: 1.8;
+    margin: 25px 0;
+}
+
+.explore-btn {
+    padding: 15px 30px;
+    border: 1px solid #d00028;
+    color: white;
+    text-decoration: none;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.explore-btn:hover {
+    background: #b00020;
+    box-shadow: 0 0 25px #b00020;
+}
+
+.broken-heart {
+    position: absolute;
+    top: 12%;
+    right: 10%;
+    font-size: 65px;
+    opacity: 0.3;
+    animation: float 4s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+/* EXPLORE ROOMS */
+
+.explore {
+    padding: 100px 8%;
+    text-align: center;
+    background: #090909;
+}
+
+.explore h2 {
+    font-size: 42px;
+    margin-bottom: 50px;
+}
+
+.rooms {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.room-card {
+    text-decoration: none;
+    color: white;
+    padding: 40px 25px;
+    background: linear-gradient(145deg, #210008, #090909);
+    border: 1px solid #48000d;
+    min-height: 220px;
+    transition: 0.4s;
+}
+
+.room-card:hover {
+    transform: translateY(-10px);
+    border-color: #e00030;
+    box-shadow: 0 0 20px #48000d;
+}
+
+.room-card h3 {
+    color: #e00030;
+    margin-bottom: 20px;
+}
+
+.room-card p {
+    color: #aaa;
+    line-height: 1.6;
+    margin-bottom: 25px;
+}
+
+.room-card span {
+    color: #ff3150;
+    font-size: 12px;
+    letter-spacing: 2px;
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;
+    padding: 30px;
+    color: #777;
+    border-top: 1px solid #48000d;
+    line-height: 2;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 700px) {
+    header {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .rooms {
+        grid-template-columns: 1fr;
+    }
+}
+/* =================================
+   HEARTLESS SOUL - QUOTE ROOM
+================================= */
+
+.quotes-page {
+    background:
+        radial-gradient(ellipse at 50% 10%, #26000a, #050505 65%);
+    min-height: 100vh;
+}
+
+.quote-room {
+    padding: 75px 7%;
+    min-height: 100vh;
+}
+
+.quote-intro {
+    text-align: center;
+    margin-bottom: 55px;
+}
+
+.quote-intro h1 {
+    font-size: clamp(35px, 5vw, 60px);
+    margin-bottom: 20px;
+}
+
+.quote-intro h1 span {
+    color: #d00028;
+}
+
+.quote-intro > p:last-child {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+/* CATEGORY FILTERS */
+
+.quote-filters {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.filter-btn {
+    padding: 11px 19px;
+    border: 1px solid #570014;
+    background: #100006;
+    color: #ddd;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: #a90025;
+    border-color: #e00030;
+    color: white;
+}
+
+.quote-count {
+    text-align: center;
+    color: #888;
+    margin: 25px 0;
+    font-size: 13px;
+}
+
+/* QUOTE CARDS */
+
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.quote-card {
+    position: relative;
+    min-height: 245px;
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: left;
+    color: white;
+    border: 1px solid #721025;
+    border-radius: 8px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 0.35s;
+    isolation: isolate;
+}
+
+.quote-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(135deg,
+        transparent 35%,
+        #ff002222 50%,
+        transparent 65%);
+    z-index: -1;
+}
+
+.quote-card:hover {
+    transform: translateY(-8px);
+    border-color: #ff1744;
+    box-shadow: 0 0 25px #b0002044;
+}
+
+.card-category {
+    color: #ff637e;
+    font-size: 11px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.card-quote {
+    font-size: 23px;
+    line-height: 1.5;
+    font-style: italic;
+}
+
+.card-hint {
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+/* FULL SCREEN MODAL */
+
+.quote-modal {
+    position: fixed;
+    inset: 0;
+    background: #020202;
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px 30px;
+}
+
+.quote-modal.show {
+    display: flex;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    background: none;
+    color: white;
+    border: none;
+    font-size: 45px;
+    cursor: pointer;
+}
+
+.quote-poster {
+    width: min(700px, 90vw);
+    min-height: min(650px, 65vh);
+    padding: 65px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 35px;
+    border: 1px solid #c00030;
+    background:
+        radial-gradient(circle at 20% 20%, #680019, transparent 45%),
+        radial-gradient(circle at 80% 80%, #39000e, transparent 50%),
+        linear-gradient(145deg, #180006, #030303 75%);
+    position: relative;
+    overflow: hidden;
+}
+
+.quote-poster::before,
+.quote-poster::after {
+    content: "✧";
+    position: absolute;
+    color: #e00030;
+    font-size: 90px;
+    opacity: 0.2;
+}
+
+.quote-poster::before {
+    top: 15px;
+    left: 25px;
+}
+
+.quote-poster::after {
+    bottom: 15px;
+    right: 25px;
+}
+
+.poster-brand {
+    color: #e00030;
+    letter-spacing: 5px;
+    font-size: 13px;
+}
+
+.poster-category {
+    color: #ff607c;
+    letter-spacing: 4px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+.quote-poster h2 {
+    font-size: clamp(25px, 4vw, 43px);
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: normal;
+}
+
+.poster-divider {
+    color: #e00030;
+    font-size: 25px;
+}
+
+.poster-footer {
+    color: #999;
+    letter-spacing: 3px;
+    font-size: 10px;
+}
+
+.save-quote {
+    margin-top: 25px;
+    background: #a90025;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.save-quote:hover {
+    background: #e00030;
+    box-shadow: 0 0 20px #b00020;
+}
+
+@media (max-width: 850px) {
+    .quote-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 550px) {
+    .quote-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-room {
+        padding: 50px 5%;
+    }
+
+    .quote-poster {
+        padding: 40px 20px;
+    }
+}
+
+/* LETTERS NEVER SENT */
+
+.letters-page {
+    background:
+        radial-gradient(circle at top, #35080e, #090909 55%);
+}
+
+.letters-hero {
+    text-align: center;
+    padding: 110px 20px 80px;
+}
+
+.eyebrow {
+    color: #c52b40;
+    letter-spacing: 4px;
+    font-size: 12px;
+}
+
+.letters-hero h1 {
+    font-size: clamp(42px, 7vw, 75px);
+    margin: 20px 0;
+}
+
+.letters-hero h1 span {
+    color: #a20e27;
+}
+
+.letters-hero > p:not(.eyebrow) {
+    color: #aaa;
+    max-width: 600px;
+    margin: 0 auto 30px;
+    line-height: 1.8;
+}
+
+.letter-button,
+.write-section button {
+    display: inline-block;
+    background: #8d1026;
+    color: white;
+    border: none;
+    padding: 14px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    letter-spacing: 2px;
+    transition: 0.3s;
+}
+
+.letter-button:hover,
+.write-section button:hover {
+    background: #c21e39;
+    transform: translateY(-3px);
+}
+
+.letter-intro,
+.curated-section,
+.write-section {
+    max-width: 950px;
+    margin: 60px auto;
+    padding: 30px 22px;
+    text-align: center;
+}
+
+.letter-intro h2,
+.curated-section h2,
+.write-section h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+}
+
+.letter-intro p,
+.write-section > p:not(.eyebrow) {
+    color: #aaa;
+    line-height: 1.8;
+}
+
+.letter-collections {
+    max-width: 1050px;
+    margin: 30px auto;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 22px;
+}
+
+.letter-card,
+.written-letter {
+    background: #141012;
+    border: 1px solid #40202a;
+    padding: 30px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.letter-card:hover,
+.written-letter:hover {
+    border-color: #a51b35;
+    transform: translateY(-5px);
+}
+
+.letter-card span,
+.written-letter span {
+    color: #c52b40;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.letter-card h3,
+.written-letter h3 {
+    margin: 20px 0;
+}
+
+.letter-card p,
+.written-letter p {
+    color: #aaa;
+    line-height: 1.9;
+}
+
+.letter-card a {
+    display: inline-block;
+    margin-top: 15px;
+    color: #d34b60;
+    text-decoration: none;
+}
+
+.written-letter {
+    max-width: 750px;
+    margin: 25px auto;
+}
+
+.written-letter small {
+    display: block;
+    margin-top: 20px;
+    color: #b34b5c;
+}
+
+.write-section form {
+    max-width: 650px;
+    margin: 35px auto;
+    text-align: left;
+}
+
+.write-section label {
+    display: block;
+    margin: 20px 0 8px;
+    color: #ddd;
+}
+
+.write-section input:not([type="checkbox"]),
+.write-section select,
+.write-section textarea {
+    width: 100%;
+    padding: 14px;
+    background: #151113;
+    color: white;
+    border: 1px solid #51202c;
+    outline: none;
+    font: inherit;
+}
+
+.write-section input:focus,
+.write-section select:focus,
+.write-section textarea:focus {
+    border-color: #c52b40;
+}
+
+.write-section textarea {
+    resize: vertical;
+}
+
+.write-section .consent {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.6;
+    font-size: 13px;
+}
+
+.write-section .consent input {
+    margin-top: 4px;
+}
+
+#letterMessage {
+    color: #d34b60;
+    margin-top: 15px;
+}
+/* =================================
+   QUOTE SEARCH BAR
+================================= */
+
+.quote-search {
+    width: 90%;
+    max-width: 650px;
+    margin: 35px auto;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 20px;
+
+    background: #10090b;
+    border: 1px solid #4a101d;
+    border-radius: 40px;
+
+    transition: 0.3s ease;
+}
+
+.quote-search:focus-within {
+    border-color: #c51d3a;
+    box-shadow: 0 0 20px rgba(197, 29, 58, 0.2);
+}
+
+.quote-search input {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 15px;
+    min-width: 0;
+}
+
+.quote-search input::placeholder {
+    color: #88777c;
+}
+
+.search-icon {
+    color: #c51d3a;
+    font-size: 25px;
+}
+
+#clearSearch {
+    background: transparent;
+    border: none;
+    color: #c51d3a;
+    font-size: 25px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#clearSearch:hover {
+    color: white;
+    transform: rotate(90deg);
+}
+/* =================================
+   FEELINGS AND PIECES OF ME
+================================= */
+
+.inner-page {
+    width: 90%;
+    max-width: 1150px;
+    margin: auto;
+    padding: 70px 0;
+}
+
+.page-intro {
+    text-align: center;
+    max-width: 750px;
+    margin: 30px auto 65px;
+}
+
+.page-intro h1 {
+    font-size: clamp(38px, 6vw, 65px);
+    margin: 18px 0;
+}
+
+.page-intro h1 span,
+.reflection-section h2 span {
+    color: #c51d3a;
+}
+
+.page-intro > p:last-child,
+.reflection-section > p {
+    color: #b8aeb1;
+    line-height: 1.8;
+}
+
+/* FEELINGS */
+
+.feeling-grid,
+.pieces-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feeling-card,
+.piece-card {
+    background: linear-gradient(145deg, #160d10, #0b0809);
+    border: 1px solid #39121d;
+    border-radius: 12px;
+    padding: 25px;
+    transition: 0.3s ease;
+}
+
+.feeling-card:hover,
+.piece-card:hover {
+    transform: translateY(-5px);
+    border-color: #c51d3a;
+    box-shadow: 0 10px 30px rgba(197, 29, 58, 0.12);
+}
+
+.feeling-card summary {
+    cursor: pointer;
+    list-style: none;
+}
+
+.feeling-card summary::-webkit-details-marker {
+    display: none;
+}
+
+.feeling-symbol {
+    font-size: 30px;
+}
+
+.feeling-card h2,
+.piece-card h2 {
+    color: #eee3e6;
+    margin: 15px 0 10px;
+}
+
+.feeling-card summary p,
+.piece-card > p {
+    color: #a99da1;
+    line-height: 1.7;
+}
+
+.reveal-label {
+    display: inline-block;
+    margin-top: 18px;
+    color: #c51d3a;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.feeling-card[open] .reveal-label {
+    color: #eee3e6;
+}
+
+.feeling-message {
+    border-top: 1px solid #49202a;
+    margin-top: 20px;
+    padding-top: 15px;
+    color: #d0c2c6;
+    line-height: 1.8;
+    animation: revealMessage 0.35s ease;
+}
+
+@keyframes revealMessage {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* PIECES OF ME */
+
+.piece-card > span {
+    color: #c51d3a;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.piece-card .piece-question {
+    border-left: 2px solid #c51d3a;
+    padding-left: 12px;
+    color: #e5cbd2;
+    margin-top: 22px;
+}
+
+/* REFLECTION AREAS */
+
+.reflection-section {
+    text-align: center;
+    max-width: 750px;
+    margin: 90px auto 30px;
+}
+
+.reflection-section h2 {
+    font-size: clamp(27px, 4vw, 40px);
+    margin: 15px 0;
+}
+
+.reflection-section textarea {
+    width: 100%;
+    margin-top: 25px;
+    padding: 20px;
+    background: #10090b;
+    border: 1px solid #4a101d;
+    border-radius: 10px;
+    color: white;
+    font: inherit;
+    line-height: 1.7;
+    resize: vertical;
+    outline: none;
+}
+
+.reflection-section textarea:focus {
+    border-color: #c51d3a;
+    box-shadow: 0 0 18px rgba(197, 29, 58, 0.15);
+}
+
+.reflection-section textarea::placeholder {
+    color: #88777c;
+}
+
+/* RESPONSIVE LAYOUT */
+
+@media (max-width: 800px) {
+    .feeling-grid,
+    .pieces-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 550px) {
+    .feeling-grid,
+    .pieces-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .inner-page {
+        padding: 40px 0;
+    }
+
+    .page-intro {
+        margin-bottom: 40px;
+    }
+}
+
+/* =================================
+   HEARTLESS SOUL - PAGE ANIMATIONS
+================================= */
+
+body {
+    animation: pageEntrance 0.8s ease both;
+}
+
+@keyframes pageEntrance {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Smooth interactive elements */
+
+a,
+button,
+.room-card,
+.feeling-card,
+.piece-card {
+    transition: all 0.3s ease;
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+    body {
+        animation: none;
+    }
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+    }
+}

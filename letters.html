@@ -1,0 +1,151 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letters Never Sent | Heartless Soul</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="letters-page">
+
+    <header class="header">
+        <a href="index.html" class="logo">HEARTLESS SOUL</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quotes.html">Quotes</a>
+            <a href="letters.html">Letters</a>
+            <a href="feelings.html">Feelings</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="letters-hero">
+            <p class="eyebrow">THE WORDS WE NEVER SAID</p>
+            <h1>Letters Never Sent<span>.</span></h1>
+            <p>
+                Some words remain inside us. Some letters are written
+                without an address, yet carry a thousand feelings.
+            </p>
+
+            <a href="#letter-collection" class="letter-button">
+                READ THE LETTERS
+            </a>
+        </section>
+
+        <section class="letter-intro" id="letter-collection">
+            <h2>Inside This Room</h2>
+            <p>Every letter has a story. Every story deserves to be heard.</p>
+        </section>
+
+        <section class="letter-collections">
+            <article class="letter-card">
+                <span>01 — CURATED WRITINGS</span>
+                <h3>Words From Silent Souls</h3>
+                <p>
+                    Carefully selected letters about experiences,
+                    lessons, boundaries and finding yourself again.
+                </p>
+                <a href="#curated">Explore Letters →</a>
+            </article>
+
+            <article class="letter-card">
+                <span>02 — YOUR VOICE</span>
+                <h3>A Letter Without a Name</h3>
+                <p>
+                    Write what you wish you could express.
+                    Your submission will be reviewed before publication.
+                </p>
+                <a href="#write-letter">Write a Letter →</a>
+            </article>
+        </section>
+
+        <section class="curated-section" id="curated">
+            <p class="eyebrow">THE COLLECTION</p>
+            <h2>Letters From The Heart</h2>
+
+            <article class="written-letter">
+                <span>LETTER 001 · SELF-WORTH</span>
+                <h3>To the person who kept trying</h3>
+                <p>
+                    You spent so much time trying to become what everyone
+                    expected that you almost forgot who you were.
+                    You do not have to earn the right to be respected.
+                    Your voice matters, even when others fail to listen.
+                </p>
+                <small>— A letter to anyone finding themselves again</small>
+            </article>
+
+            <article class="written-letter">
+                <span>LETTER 002 · NEW BEGINNINGS</span>
+                <h3>Dear Future Me</h3>
+                <p>
+                    I hope you remember how much courage it took to begin
+                    again. I hope you learned that growing does not mean
+                    becoming someone else. It means discovering the person
+                    you were always allowed to be.
+                </p>
+                <small>— From a soul still growing</small>
+            </article>
+        </section>
+
+        <section class="write-section" id="write-letter">
+            <p class="eyebrow">YOUR WORDS MATTER</p>
+            <h2>Write Your Letter</h2>
+            <p>
+                This is a draft form for now. Submissions are not yet
+                stored or published. We will connect it to a reviewed
+                submission system later.
+            </p>
+
+            <form id="letterForm">
+                <label for="letterTitle">Letter title</label>
+                <input
+                    type="text"
+                    id="letterTitle"
+                    placeholder="Give your letter a title"
+                    maxlength="80"
+                    required
+                >
+
+                <label for="letterCategory">Choose a category</label>
+                <select id="letterCategory" required>
+                    <option value="">Select a category</option>
+                    <option>Self-worth</option>
+                    <option>Friendship</option>
+                    <option>Family</option>
+                    <option>Being misunderstood</option>
+                    <option>Growth</option>
+                    <option>Hope</option>
+                </select>
+
+                <label for="letterText">Your letter</label>
+                <textarea
+                    id="letterText"
+                    rows="8"
+                    maxlength="3000"
+                    placeholder="Write what you have been carrying..."
+                    required
+                ></textarea>
+
+                <label class="consent">
+                    <input type="checkbox" id="letterConsent" required>
+                    I understand that my letter must be reviewed before
+                    it can appear publicly.
+                </label>
+
+                <button type="submit">SUBMIT FOR REVIEW</button>
+                <p id="letterMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>HEARTLESS SOUL — Every silent soul has a story.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

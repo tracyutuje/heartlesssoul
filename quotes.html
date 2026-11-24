@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>The Room of Quotes | Heartless Soul</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="quotes-page">
+
+    <header>
+        <a href="index.html" class="logo">🖤 HEARTLESS SOUL</a>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="quotes.html">Quotes</a>
+            <a href="letters.html">Letters</a>
+            <a href="feelings.html">Feelings</a>
+        </nav>
+    </header>
+
+    <main class="quote-room">
+
+        <div class="quote-intro">
+            <p class="subtitle">WORDS THAT WERE NEVER SPOKEN</p>
+
+            <h1>The Room of <span>Quotes</span></h1>
+
+            <p>
+                For the souls changed by words, experiences,
+                expectations and the world around them.
+            </p>
+        </div>
+        <!-- QUOTE SEARCH -->
+<div class="quote-search">
+    <span class="search-icon">⌕</span>
+
+    <input
+        type="search"
+        id="quoteSearch"
+        placeholder="Search for a feeling, a word, or a thought..."
+        autocomplete="off"
+    >
+
+    <button id="clearSearch" type="button">×</button>
+</div>
+
+
+        <div class="quote-filters" id="quoteFilters"></div>
+
+        <p class="quote-count" id="quoteCount"></p>
+
+        <div class="quote-grid" id="quoteGrid"></div>
+
+    </main>
+
+    <!-- FULL SCREEN QUOTE -->
+
+    <div class="quote-modal" id="quoteModal">
+
+        <button class="close-modal" id="closeModal"
+            aria-label="Close quote">×</button>
+
+        <div class="quote-poster" id="quotePoster">
+
+            <p class="poster-brand">HEARTLESS SOUL</p>
+
+            <p class="poster-category" id="posterCategory"></p>
+
+            <h2 id="posterText"></h2>
+
+            <div class="poster-divider">✦</div>
+
+            <p class="poster-footer">
+                A WORLD OF SILENT FEELINGS.
+            </p>
+
+        </div>
+
+        <button class="save-quote" id="saveQuote">
+            ↓ SAVE QUOTE AS IMAGE
+        </button>
+
+    </div>
+
+    <footer>
+        <p>HEARTLESS SOUL © 2026</p>
+        <p>Every feeling has a story.</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="script.js"></script>
+
+</body>
+</html>
